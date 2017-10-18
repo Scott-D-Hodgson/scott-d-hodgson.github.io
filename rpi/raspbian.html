@@ -5,11 +5,10 @@
 <meta charset="utf-8">
 <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
 		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-<title>Scott D Hodgson
-</title>
+<title>Raspbian</title>
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <!-- Meta data -->
-<meta name="description" content="Profile page for my projects and work.">
+<meta name="description" content="Setup instructions to configure the Raspberry Pi to work with the smart-projects in this repository.">
 <!-- Meta data-->
 <!--[if gte IE 9 | !IE ]><!-->
 <link href="https://scott-d-hodgson.github.io/wet-boew-dist-4.0.26/theme-wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon">
@@ -59,7 +58,7 @@
 <div id="wb-sttl" class="col-md-8">
 <a href="https://scott-d-hodgson.github.io/wet-boew-dist-4.0.26/index-en.html">
 <object type="image/svg+xml" tabindex="-1" data="https://scott-d-hodgson.github.io/wet-boew-dist-4.0.26/theme-wet-boew/assets/logo.svg"></object>
-<span>Scott D Hodgson<span class="wb-inv">, </span><small>Profile page for my projects and work.</small></span>
+<span>Scott D Hodgson<span class="wb-inv">, </span><small>Raspberry Pi Setup page for my projects and work.</small></span>
 </a>
 </div>
 <section id="wb-srch" class="col-md-4 visible-md visible-lg">
@@ -90,7 +89,7 @@
 </nav>
 </header>
 <main role="main" property="mainContentOfPage" class="container">
-<h1 id="wb-cont" property="name">Scott D Hodgson</h1>
+<h1 id="wb-cont" property="name">Raspberry Pi</h1>
 <section>
 	<div class="row mrgn-tp-lg">
 	<div class="col-md-8">
@@ -100,11 +99,14 @@
 			</div>
 			<div class="panel-body">
 				<ul>
-					<li><a href="#understand"></a>
+					<li><a href="#background">Background</a></li>
+					<li><a href="#hardware">Hardware</a>
 						<ul>
-							<li><a href="#print"></a></li>
+							<li><a href="#hardware-sbc">Single Board Computers</a></li>
+							<li><a href="#hardware-microsd">Micro SD Cards</a></li>
 						</ul>
 					</li>
+					<li><a href="#os">Operating System</a></li>
 				</ul>
 			</div>
 		</div>
@@ -117,12 +119,111 @@
         	<div class="list-group">
         		<a href="https://github.com/scott-d-hodgson/" class="list-group-item active">Portfolio</a>
         		<a href="https://github.com/scott-d-hodgson/rpi/" class="list-group-item">Raspberry Pi</a>
-        		<a href="https://github.com/scott-d-hodgson/rpi/raspbian.html" class="list-group-item">Raspbian</a>
+        		<a href="https://github.com/scott-d-hodgson/rpi/raspbian.html" class="list-group-item active">Raspbian</a>
         		<a href="https://github.com/scott-d-hodgson/rpi/apache.html" class="list-group-item">Apache</a>
         	</div>
    		</div>
 	</div>
 	</div>
+</section>
+<section>
+<h2 id="background">Background</h2>
+<p>
+	The Raspberry Pi computer, also known as the <abbr title="Raspberry Pi">RPI</abbr>, is product of an initiative by the <a href="https://www.raspberrypi.org/">Raspberry Pi Organization</a>.  It is a single board computer (<abbr title="single board computer">SBC</abbr>), has become the darling of the Maker community, the "leader" in the <abbr title="single board computer">SBC</abbr> industry, and the basis for the hardware used to support the projects in this repository.  In particular, the graphical user interface (<abbr title="graphical user interface">GUI</abbr>) components of the Smart Clock (smart-clock-ui) and the Smart Mirror (smart-mirror-ui) use the many of the projects in this repository.
+</p>
+</section>
+<section>
+<h2 id="hardware">Hardware</h2>
+<h3 id="hardware-sbc">Single Board Computers (SBC)</h3>
+<p>
+	The <abbr title="Raspberry Pi">RPI</abbr> can be found at many online locations and the price of it is roughly the same.  From my own shopping experience, the following online sites have become my primary place to buy the <abbr title="single board computer">SBC</abbr>:
+</p>
+<table class="table table-striped">
+	<caption class="wb-inv">Caption text</caption>
+	<thead>
+		<th>Vendor</th>
+		<th><abbr title="Uniform Resource Locator">URL</abbr></th>
+		<th><abbr title="Raspberry Pi">RPI</abbr> 3</th>
+		<th><abbr title="Raspberry Pi">RPI</abbr> 2</th>
+		<th><abbr title="Raspberry Pi">RPI</abbr> 1</th>
+		<th><abbr title="Raspberry Pi">RPI</abbr> Zero</th>
+		<th><abbr title="Raspberry Pi">RPI</abbr> Zero W</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Buy a Pi</td>
+			<td><a href="www.buyapi.ca">buyapi.ca</a></td>
+			<td><a href="https://www.buyapi.ca/product/raspberry-pi-3-model-b-armv8-with-1g-ram/">Board</a></td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>CanaKit</td>
+			<td><a href="https://www.canakit.com/">canakit.com</a></td>
+			<td><a href="https://www.canakit.com/raspberry-pi-3-model-b.html">Board</a></td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>Amazon</td>
+			<td><a href="www.amazon.ca">amazon.ca</a></td>
+			<td><a href="https://www.amazon.ca/Raspberry-Pi-RASPBERRYPI3-MODB-1GB-Model-Board/dp/B01CD5VC92/ref=sr_1_4?s=pc&ie=UTF8&qid=1508113550&sr=1-4&keywords=raspberry+pi+3">Board</a></td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+	</tbody>
+</table>
+<h3 id="hardware-microsd">Micro SD Cards</h3>
+<p>
+</p>
+</section>
+<section>
+<h2 id="os">Operating System</h2>
+<p>
+	The typical operating system <abbr title="operating system">OS</abbr> of the <abbr title="Raspberry Pi">RPI</abbr> is a variant of the Debian <abbr title="operating system">OS</abbr> (which, in itself, is a build of Linux) called Raspbian.  This operating system can be downloaded from the Raspberry Pi Organization's <a href="https://www.raspberrypi.org/downloads/raspbian/">downloads section</a>.  Depending on the <abbr title="operating system">OS</abbr> of the computer you are working on, there are different methods to prepare the memory card.
+</p>
+<div class="wb-tabs">
+	<div class="tabpanels">
+		<details id="details-panel1">
+			<summary>Windows</summary>
+			<p>
+				Windows
+			</p>
+		</details>
+		<details id="details-panel2" open="open">
+			<summary>Ubuntu</summary>
+			<p>
+				Ubuntu
+			</p>
+		</details>
+	</div>
+</div>
+<h2>Update Raspbian</h2>
+<p>
+</p>
+<pre><code>sudo apt-get update</code></pre>
+<pre><code>sudo apt-get upgrade</code></pre>
+<h2>Install Apache</h2>
+<pre><code>sudo apt-get install apache2</code></pre>
+<small><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=155067&p=1015166">Reference</a></small>
+<p>The HTTP daemon runs under the group, <code>www-data</code>, in the Rasbian <abbr title="operating system">OS</abbr> (the same as in Debian).  The html files are stored in the folder <code>/var/www/</code> (which is owned by the root account) and is readable by all users and only writeable by root.</p>
+<p>In order for the user pi to write to <code>/var/www</code> it will need have ownership over the folder.</p>
+<pre><code>sudo chown -R pi:www-data /var/www</code></pre>
+<p>In addition the user and group permissions will need to be set on the folder as well.
+<pre><code>sudo chmod u+rxw,g+rx-w,o-rwx /var/www</code></pre>
+<p>Finally any new file that is created in the folder needs to belong to the group <code>www-data</code>.</p>
+<pre><code>sudo chmod g+s /var/www</code></pre>
+<p>If there were any existing files or folders, the permissions on those will have to be updated as well.<p>
+<p>The setting of the permissions for existing files.</p>
+<pre><code>chmod u+rw,g+r-xw,o-rwx</code></pre>
+<p>The setting of the premissions for existing folders.</p>
+<pre><code>chmod u+rwx,g+rx-w,o-rxw</code></pre>
 </section>
 <dl id="wb-dtmd">
 <dt>Date modified:&#32;</dt>
@@ -165,7 +266,8 @@
 <script src="https://scott-d-hodgson.github.io/wet-boew-dist-4.0.26/wet-boew/js/wet-boew.min.js"></script>
 <!--<![endif]-->
 <!--[if lt IE 9]>
-		<script src="https://scott-d-hodgson.github.io/wet-boew-dist-4.0.26/wet-boew/js/ie8-wet-boew2.min.js"></script>		
+		<script src="https://scott-d-hodgson.github.io/wet-boew-dist-4.0.26/wet-boew/js/ie8-wet-boew2.min.js"></script>
+		
 		<![endif]-->
 </body>
 </html>
